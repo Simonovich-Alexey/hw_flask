@@ -1,5 +1,21 @@
-# Склады и товары
+# Приложение на Flask
 
+### REST API для списка задач
+
+run database:
+```bash
+docker-compose --env-file .env_example up db
+```
+run tests:
+
+```bash
+docker-compose --env-file .env_example up tests
+```
+
+run app:
+```bash
+docker-compose --env-file .env_example up app
+```
 
 ### Сборка Docker-образа
 Для сборки Docker-образа используйте следующую команду:
