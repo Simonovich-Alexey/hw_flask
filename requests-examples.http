@@ -7,34 +7,34 @@ POST {{baseUrl}}/user
 Content-Type: application/json; charset=utf-8
 
 {
-  "name": "User_1",
-  "email": "user@gmail.ru",
+  "name": "User_2",
+  "email": "user2@gmail.ru",
   "password": "87654321"
 }
 
 ###
 
 # получение токена
-POST {{baseUrl}}/user
+POST {{baseUrl}}/login
 Content-Type: application/json; charset=utf-8
 
 {
   "name": "User_1",
-  "password": "12345678"
+  "password": "87654321"
 }
 
 ###
 
 # получение данных по токену пользователя
 GET {{baseUrl}}/user
-Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
 
 ###
 
 # обновление пользователя по токену
 PATCH {{baseUrl}}/user
 Content-Type: application/json; charset=utf-8
-Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
 
 {
   "email": "email@mail.ru",
@@ -54,11 +54,11 @@ Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
 POST {{baseUrl}}/ads
 Content-Type: application/json
 Charset: utf-8
-Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
 
 {
-  "title": "Title Ad",
-  "description": "text ad"
+  "title": "Title Ads",
+  "description": "text ads"
 }
 
 ###
@@ -69,10 +69,16 @@ Content-Type: application/json
 
 ###
 
+# поиск продуктов по названию и описанию
+GET {{baseUrl}}/ads/1
+Content-Type: application/json
+
+###
+
 # обновление пользователя по токену
 PATCH {{baseUrl}}/ads/1
 Content-Type: application/json; charset=utf-8
-Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
 
 {
   "title": "Ads",
@@ -84,6 +90,6 @@ Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
 # удаление пользователя по токену
 DELETE {{baseUrl}}/ads/1
 Content-Type: application/json; charset=utf-8
-Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
 
 ###
