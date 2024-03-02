@@ -1,6 +1,5 @@
 from flask import request
 from flask_bcrypt import Bcrypt
-
 from packages.app import get_app
 from packages.error import HttpError
 from packages.models import Token
@@ -8,7 +7,7 @@ from packages.models import Token
 bcrypt = Bcrypt(get_app())
 
 
-def hash_password(password: str):
+def hash_password(password: str) -> str:
     return bcrypt.generate_password_hash(password.encode()).decode()
 
 
@@ -27,3 +26,9 @@ def check_token(handler):
         request.token = token
         return handler(*args, **kwargs)
     return wrapper
+
+
+def check_owner_ad(data_ad):
+    user = request.token.user_id
+    if data_ad.owner != user:
+        raise HttpError(403, "access denied")

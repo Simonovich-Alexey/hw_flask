@@ -66,9 +66,9 @@ class Ad(Base):
     __tablename__ = 'ads'
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    title: Mapped[str] = mapped_column(String(100), unique=True, nullable=False, index=True)
+    title: Mapped[str] = mapped_column(String(100), nullable=False, index=True)
     description: Mapped[str] = mapped_column(String(500), nullable=False)
-    registration_time: Mapped[datetime.datetime] = mapped_column(DateTime, server_default=func.now())
+    registration_time: Mapped[datetime.datetime] = mapped_column(DateTime, default=func.now())
     owner: Mapped[int] = mapped_column(ForeignKey('users.id'), nullable=False)
 
     user: Mapped['User'] = relationship(User, back_populates='ads')
@@ -80,7 +80,7 @@ class Ad(Base):
             "title": self.title,
             "description": self.description,
             "registration_time": self.registration_time.isoformat(),
-            "owner": self.user
+            "owner": self.user.name
         }
 
 

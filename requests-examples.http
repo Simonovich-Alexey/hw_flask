@@ -1,0 +1,89 @@
+# примеры API-запросов
+
+@baseUrl = http://localhost:5000
+
+# создание пользователя
+POST {{baseUrl}}/user
+Content-Type: application/json; charset=utf-8
+
+{
+  "name": "User_1",
+  "email": "user@gmail.ru",
+  "password": "87654321"
+}
+
+###
+
+# получение токена
+POST {{baseUrl}}/user
+Content-Type: application/json; charset=utf-8
+
+{
+  "name": "User_1",
+  "password": "12345678"
+}
+
+###
+
+# получение данных по токену пользователя
+GET {{baseUrl}}/user
+Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+
+###
+
+# обновление пользователя по токену
+PATCH {{baseUrl}}/user
+Content-Type: application/json; charset=utf-8
+Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+
+{
+  "email": "email@mail.ru",
+  "password": "12345678"
+}
+
+###
+
+# удаление пользователя по токену
+DELETE {{baseUrl}}/user
+Content-Type: application/json; charset=utf-8
+Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+
+###
+
+# подача объявления
+POST {{baseUrl}}/ads
+Content-Type: application/json
+Charset: utf-8
+Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+
+{
+  "title": "Title Ad",
+  "description": "text ad"
+}
+
+###
+
+# поиск продуктов по названию и описанию
+GET {{baseUrl}}/ads
+Content-Type: application/json
+
+###
+
+# обновление пользователя по токену
+PATCH {{baseUrl}}/ads/1
+Content-Type: application/json; charset=utf-8
+Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+
+{
+  "title": "Ads",
+  "description": "text"
+}
+
+###
+
+# удаление пользователя по токену
+DELETE {{baseUrl}}/ads/1
+Content-Type: application/json; charset=utf-8
+Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
+
+###

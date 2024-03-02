@@ -1,8 +1,8 @@
 from flask import request
 from sqlalchemy.exc import IntegrityError
-
 from packages.error import HttpError
 from packages.models import MODEL_TYPE, MODEL
+from pydantic import ValidationError
 
 
 def add_item(item: MODEL) -> MODEL:
@@ -30,3 +30,12 @@ def update_item(item: MODEL, json: dict) -> MODEL:
 def delete_item(item: MODEL):
     request.session.delete(item)
     request.session.commit()
+
+
+def validate(model, data: dict):
+    try:
+        return model.model_validate(data).model_dump(exclude_unset=True)
+    except ValidationError as er:
+        error = er.errors()[0]
+        error.pop("ctx", None)
+        raise HttpError(400, error)
