@@ -23,7 +23,7 @@ docker-compose --env-file .env_example up app -d
 
 * **Пример запроса**:
 
-```json
+```rest
 POST http://localhost:5000/user
 Content-Type: application/json
 
@@ -53,7 +53,7 @@ Content-Type: application/json
 
 * **Пример запроса**:
 
-```json
+```rest
 POST http://localhost:5000/login
 Content-Type: application/json
 
@@ -77,7 +77,7 @@ Content-Type: application/json
 
 * **Пример запроса**:
 
-```json
+```rest
 POST http://localhost:5000/ads
 Content-Type: application/json
 ```
@@ -119,7 +119,7 @@ Content-Type: application/json
 
 * **Пример запроса**:
 
-```json
+```rest
 POST http://localhost:5000/ads
 Content-Type: application/json
 Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
