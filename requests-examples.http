@@ -8,7 +8,7 @@ Content-Type: application/json
 
 {
   "name": "User_1",
-  "email": "user1@gmail.ru",
+  "email": "user3@gmail.ru",
   "password": "87654321"
 }
 
@@ -53,11 +53,11 @@ Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
 # подача объявления
 POST {{baseUrl}}/ads
 Content-Type: application/json
-Authorization: 74a505e6-fcad-4602-a99d-0811870af191
+Authorization: f3e29002-70d5-456a-87c0-8f4e09006fe7
 
 {
   "title": "Title",
-  "description": "text ads 111"
+  "description": "text ad"
 }
 
 ###
@@ -80,7 +80,7 @@ Content-Type: application/json; charset=utf-8
 Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
 
 {
-  "title": "Ads",
+  "title": "Title ad",
   "description": "text"
 }
 
