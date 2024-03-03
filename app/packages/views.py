@@ -49,7 +49,7 @@ class LoginView(MethodView):
 class AdsView(MethodView):
     def get(self, ad_id: int = None):
         if ad_id is None:
-            return jsonify([ad.dict for ad in request.session.query(Ad)])
+            return jsonify({'ads': [ad.dict for ad in request.session.query(Ad)]})
         ad = get_item_by_id(Ad, ad_id)
         return jsonify(ad.dict)
 

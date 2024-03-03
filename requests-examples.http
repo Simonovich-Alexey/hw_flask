@@ -4,11 +4,11 @@
 
 # создание пользователя
 POST {{baseUrl}}/user
-Content-Type: application/json; charset=utf-8
+Content-Type: application/json
 
 {
-  "name": "User_2",
-  "email": "user2@gmail.ru",
+  "name": "User_1",
+  "email": "user1@gmail.ru",
   "password": "87654321"
 }
 
@@ -16,7 +16,7 @@ Content-Type: application/json; charset=utf-8
 
 # получение токена
 POST {{baseUrl}}/login
-Content-Type: application/json; charset=utf-8
+Content-Type: application/json
 
 {
   "name": "User_1",
@@ -33,7 +33,7 @@ Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
 
 # обновление пользователя по токену
 PATCH {{baseUrl}}/user
-Content-Type: application/json; charset=utf-8
+Content-Type: application/json
 Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
 
 {
@@ -45,7 +45,7 @@ Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
 
 # удаление пользователя по токену
 DELETE {{baseUrl}}/user
-Content-Type: application/json; charset=utf-8
+Content-Type: application/json
 Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
 
 ###
@@ -53,29 +53,28 @@ Authorization: 3de65cf9-e2d8-4c06-a4d8-94a38b69ae51
 # подача объявления
 POST {{baseUrl}}/ads
 Content-Type: application/json
-Charset: utf-8
-Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
+Authorization: 74a505e6-fcad-4602-a99d-0811870af191
 
 {
-  "title": "Title Ads",
-  "description": "text ads"
+  "title": "Title",
+  "description": "text ads 111"
 }
 
 ###
 
-# поиск продуктов по названию и описанию
+# все объявления
 GET {{baseUrl}}/ads
 Content-Type: application/json
 
 ###
 
-# поиск продуктов по названию и описанию
+# поиск объявления по id
 GET {{baseUrl}}/ads/1
 Content-Type: application/json
 
 ###
 
-# обновление пользователя по токену
+# обновление объявления
 PATCH {{baseUrl}}/ads/1
 Content-Type: application/json; charset=utf-8
 Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
@@ -87,7 +86,7 @@ Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
 
 ###
 
-# удаление пользователя по токену
+# удаление объявления
 DELETE {{baseUrl}}/ads/1
 Content-Type: application/json; charset=utf-8
 Authorization: 384089c3-67fb-47b4-aad0-e20da6a378f4
